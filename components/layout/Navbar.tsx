@@ -58,8 +58,8 @@ export default function Navbar() {
           {/* Mobile Hamburger Button */}
           <button
             className="lg:hidden flex flex-col justify-center gap-1.5 w-6 h-6 p-0 bg-transparent"
-            onClick={() => setMobileMenuOpen(true)}
-            aria-label="Open menu"
+            onClick={() => setMobileMenuOpen((prev) => !prev)}
+            aria-label={mobileMenuOpen ? "Close menu" : "Open menu"}
             aria-expanded={mobileMenuOpen}
           >
             <span className="block w-6 h-0.5 bg-[#F5F5DC]" />
@@ -69,58 +69,37 @@ export default function Navbar() {
         </div>
       </header>
 
-      {/* Mobile Menu Overlay */}
+      {/* Mobile Menu Dropdown */}
       {mobileMenuOpen && (
-        <div className="fixed inset-0 z-50 bg-background/[0.98] flex flex-col items-center justify-center px-4">
-          <Link
-            href="/"
-            className="absolute top-6 left-4 sm:left-6 flex items-center gap-4"
-            onClick={() => setMobileMenuOpen(false)}
-          >
-            <div className="relative h-10 w-[clamp(140px,48vw,280px)] overflow-hidden">
-              <Image
-                src="/icons/ittalab.png"
-                alt="Ittalab"
-                fill
-                className="object-contain object-left"
-                sizes="280px"
-              />
-            </div>
-          </Link>
-
-          {/* Close Button (X) */}
+        <>
           <button
-            className="absolute top-6 right-6 w-12 h-12 flex items-center justify-center bg-transparent"
-            onClick={() => setMobileMenuOpen(false)}
+            className="fixed inset-0 top-16 z-30 bg-black/20 lg:hidden"
             aria-label="Close menu"
-          >
-            <span className="relative w-6 h-6">
-              <span className="absolute top-1/2 left-0 w-6 h-0.5 bg-[#F5F5DC] rotate-45 -translate-y-1/2" />
-              <span className="absolute top-1/2 left-0 w-6 h-0.5 bg-[#F5F5DC] -rotate-45 -translate-y-1/2" />
-            </span>
-          </button>
+            onClick={() => setMobileMenuOpen(false)}
+          />
 
-          {/* Mobile Nav Links */}
-          <nav className="flex flex-col items-center gap-6 sm:gap-8">
-            {navLinks.map((link) => {
-              const isActive = pathname === link.href;
-              return (
-                <Link
-                  key={link.href}
-                  href={link.href}
-                  className={`text-2xl sm:text-3xl font-display tracking-tight transition-colors ${
-                    isActive
-                      ? "text-[#EA580C]"
-                      : "text-[#F5F5DC]"
-                  }`}
-                  onClick={() => setMobileMenuOpen(false)}
-                >
-                  {link.label}
-                </Link>
-              );
-            })}
-          </nav>
-        </div>
+          <div className="fixed top-16 left-0 right-0 z-40 lg:hidden border-b border-[#2D2319] bg-[#1A1009] shadow-xl">
+            <nav className="max-w-screen-xl mx-auto px-4 sm:px-6 py-4 flex flex-col gap-2">
+              {navLinks.map((link) => {
+                const isActive = pathname === link.href;
+                return (
+                  <Link
+                    key={link.href}
+                    href={link.href}
+                    className={`rounded-lg px-3 py-3 text-base font-display tracking-tight transition-colors ${
+                      isActive
+                        ? "text-[#EA580C] bg-[#EA580C]/10"
+                        : "text-[#F5F5DC] hover:bg-[#2D2319]"
+                    }`}
+                    onClick={() => setMobileMenuOpen(false)}
+                  >
+                    {link.label}
+                  </Link>
+                );
+              })}
+            </nav>
+          </div>
+        </>
       )}
     </>
   );
