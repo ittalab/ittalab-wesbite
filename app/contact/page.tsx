@@ -10,12 +10,12 @@ export const metadata: Metadata = {
 
 export default function ContactPage() {
   return (
-    <section className="pt-12 pb-24 min-h-screen border-t border-border flex items-start justify-center">
+    <section className="pt-8 sm:pt-10 pb-20 sm:pb-24 min-h-screen border-t border-border flex items-start justify-center">
       <div className="max-w-2xl mx-auto px-6 lg:px-8 w-full text-center flex flex-col items-center">
         <div className="space-y-6 flex flex-col items-center">
           <SectionLabel>{"Get in Touch"}</SectionLabel>
 
-          <h1 className="max-w-xl text-5xl lg:text-6xl font-display font-bold text-[#F5F5DC]">
+          <h1 className="max-w-xl text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-display font-bold text-[#F5F5DC]">
             Let{`'`}s talk
           </h1>
 
@@ -25,7 +25,7 @@ export default function ContactPage() {
 
           <Link
             href="mailto:support@ittalab.com"
-            className="block text-3xl lg:text-4xl font-display font-semibold text-[#EA580C] hover:text-[#C2410C] underline-offset-8"
+            className="block text-xl sm:text-2xl lg:text-4xl font-display font-semibold text-[#EA580C] hover:text-[#C2410C] underline-offset-8"
           >
             support@ittalab.com
           </Link>

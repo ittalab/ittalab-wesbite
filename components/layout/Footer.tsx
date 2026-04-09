@@ -5,7 +5,7 @@ export default function Footer() {
   return (
     <footer className="bg-background border-t border-[#2D2319] py-16">
       <div className="container mx-auto px-6 lg:px-16">
-        <div className="grid gap-8 md:grid-cols-[minmax(0,1.2fr)_minmax(0,1fr)]">
+        <div className="grid gap-10 md:gap-8 md:grid-cols-[minmax(0,1.2fr)_minmax(0,1fr)]">
           <div>
             <div className="flex items-center gap-3 mb-4">
               <div className="grid grid-cols-2 gap-0.5">
@@ -23,7 +23,7 @@ export default function Footer() {
             </p>
           </div>
 
-          <div className="grid grid-cols-2 gap-8">
+          <div className="grid grid-cols-2 gap-6 sm:gap-8">
             <div>
               <h4 className="text-sm font-sans font-medium text-[#F5F5DC] mb-3">
                 Navigate

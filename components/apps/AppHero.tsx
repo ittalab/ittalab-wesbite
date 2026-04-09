@@ -21,31 +21,31 @@ export default function AppHero({ app }: AppHeroProps) {
   const features = app.features.slice(0, 6);
 
   return (
-    <section className="py-16 border-b border-border bg-background">
-      <div className="max-w-screen-xl mx-auto px-6 lg:px-8">
-        <div className="grid gap-12 lg:grid-cols-[minmax(0,1fr)_360px] items-start">
+    <section className="py-12 sm:py-16 border-b border-border bg-background">
+      <div className="max-w-screen-xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="grid gap-8 lg:grid-cols-[minmax(0,1fr)_clamp(280px,32vw,360px)] items-start">
 
           {/* Left: App Info */}
-          <div className="space-y-6">
-            <div className="flex items-center gap-4">
+          <div className="space-y-5 sm:space-y-6">
+            <div className="flex flex-col sm:flex-row sm:items-center gap-3 sm:gap-4">
               <AppIcon emoji={app.icon} logo={app.logo} size="lg" isComingSoon={isComingSoon} />
               <Tag variant={app.status}>{isComingSoon ? "Coming Soon" : app.status}</Tag>
             </div>
 
             <div className="space-y-4 max-w-2xl">
-              <h1 className="font-display font-bold text-5xl md:text-6xl lg:text-7xl leading-[1.05] tracking-tight text-foreground">
+              <h1 className="font-display font-bold text-3xl sm:text-4xl md:text-5xl lg:text-7xl leading-[1.02] tracking-tight text-foreground">
                 {app.name}
               </h1>
-              <p className="font-display font-semibold text-xl md:text-2xl text-primary">
+              <p className="font-display font-semibold text-lg sm:text-xl md:text-2xl text-primary">
                 {app.tagline}
               </p>
-              <p className="text-lg md:text-xl text-foreground/80 leading-relaxed">
+              <p className="text-base sm:text-lg md:text-xl text-foreground/80 leading-relaxed">
                 {app.description}
               </p>
             </div>
 
             {/* Download Buttons */}
-            <div className="flex flex-wrap items-center gap-4 pt-2">
+            <div className="flex flex-col sm:flex-row sm:flex-wrap items-stretch sm:items-center gap-3 sm:gap-4 pt-2">
 
               {/* App Store badge */}
 
@@ -54,14 +54,14 @@ export default function AppHero({ app }: AppHeroProps) {
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label="Download on the App Store"
-                className="rounded-xl focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary hover:opacity-80 transition-opacity duration-150 flex items-center justify-center"
-                style={{ minWidth: 200, width: 200, display: 'flex', alignItems: 'center', justifyContent: 'center', padding: 0, background: 'none', border: 'none' }}
+                className="w-full sm:w-[200px] rounded-xl focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary hover:opacity-80 transition-opacity duration-150 flex items-center justify-center"
+                style={{ maxWidth: 200, display: 'flex', alignItems: 'center', justifyContent: 'center', padding: 0, background: 'none', border: 'none' }}
               >
                 {/* eslint-disable-next-line @next/next/no-img-element */}
                 <img
                   src="/icons/appstore.svg"
                   alt="Download on the App Store"
-                  style={{ width: 200, height: 'auto', display: 'block' }}
+                  style={{ width: '100%', height: 'auto', display: 'block' }}
                 />
               </a>
 
@@ -71,14 +71,14 @@ export default function AppHero({ app }: AppHeroProps) {
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label="Get it on Google Play"
-                className="rounded-xl focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary hover:opacity-80 transition-opacity duration-150 flex items-center justify-center"
-                style={{ minWidth: 200, width: 200, display: 'flex', alignItems: 'center', justifyContent: 'center', padding: 0, background: 'none', border: 'none' }}
+                className="w-full sm:w-[200px] rounded-xl focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary hover:opacity-80 transition-opacity duration-150 flex items-center justify-center"
+                style={{ maxWidth: 200, display: 'flex', alignItems: 'center', justifyContent: 'center', padding: 0, background: 'none', border: 'none' }}
               >
                 {/* eslint-disable-next-line @next/next/no-img-element */}
                 <img
                   src="/icons/playstore.svg"
                   alt="Get it on Google Play"
-                  style={{ width: 200, height: 'auto', display: 'block' }}
+                  style={{ width: '100%', height: 'auto', display: 'block' }}
                 />
               </a>
 
@@ -87,8 +87,8 @@ export default function AppHero({ app }: AppHeroProps) {
                 href={webUrl}
                 variant="ghost"
                 external
-                className="!h-[56px] !min-w-[200px] !text-lg !px-8 !rounded-xl"
-                style={{ height: BADGE_HEIGHT, minWidth: 200, width: 200, fontSize: 22, display: 'flex', alignItems: 'center', justifyContent: 'center' }}
+                className="!h-[56px] !w-full sm:!w-[200px] !text-base sm:!text-lg !px-6 sm:!px-8 !rounded-xl"
+                style={{ height: BADGE_HEIGHT, width: '100%', maxWidth: 200, fontSize: 22, display: 'flex', alignItems: 'center', justifyContent: 'center' }}
               >
                 {/* eslint-disable-next-line @next/next/no-img-element */}
                 <img
@@ -120,7 +120,7 @@ export default function AppHero({ app }: AppHeroProps) {
               {features.map((feature, idx) => (
                 <li
                   key={feature}
-                  className="flex items-start gap-4 px-6 py-4 group hover:bg-[#2A1F17] transition-colors duration-150"
+                  className="flex items-start gap-4 px-4 sm:px-6 py-4 group hover:bg-[#2A1F17] transition-colors duration-150"
                 >
                   <span
                     className="flex-shrink-0 w-6 h-6 flex items-center justify-center rounded-md bg-primary/10 border border-primary/20 text-primary font-mono text-xs font-semibold mt-0.5"
@@ -136,7 +136,7 @@ export default function AppHero({ app }: AppHeroProps) {
             </ul>
 
             {app.features.length > 6 && (
-              <div className="px-6 py-3 border-t border-[#2D2319]">
+              <div className="px-4 sm:px-6 py-3 border-t border-[#2D2319]">
                 <span className="text-xs text-foreground-muted">
                   +{app.features.length - 6} more features
                 </span>

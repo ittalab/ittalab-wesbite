@@ -9,14 +9,14 @@ export const metadata: Metadata = {
 
 export default function AboutPage() {
   return (
-    <main className="pt-12 pb-24 min-h-screen border-t border-border flex items-start justify-center">
+    <main className="pt-8 sm:pt-10 pb-20 sm:pb-24 min-h-screen border-t border-border flex items-start justify-center">
       <div className="container mx-auto px-6 lg:px-16 max-w-3xl w-full text-center">
         <div className="space-y-6 flex flex-col items-center">
           <p className="text-xs text-primary font-sans font-medium tracking-widest uppercase">
             ABOUT ITTALAB
           </p>
 
-          <h1 className="max-w-2xl text-5xl lg:text-6xl font-display font-bold text-foreground">
+          <h1 className="max-w-2xl text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-display font-bold text-foreground">
             Built by one person. No investors. No bullshit.
           </h1>
 

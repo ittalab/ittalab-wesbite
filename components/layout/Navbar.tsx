@@ -18,18 +18,18 @@ export default function Navbar() {
   return (
     <>
       {/* Desktop Navbar */}
-      <header className="fixed top-0 left-0 right-0 z-40 h-24 lg:h-28 w-full bg-[#1A1009] border-b border-[#2D2319]">
-        <div className="max-w-screen-xl mx-auto px-6 lg:px-16 flex items-center justify-between h-full">
+      <header className="fixed top-0 left-0 right-0 z-40 h-16 w-full bg-[#1A1009] border-b border-[#2D2319]">
+        <div className="max-w-screen-xl mx-auto px-4 sm:px-6 lg:px-16 flex items-center justify-between h-full">
           {/* Logo */}
           <Link href="/" className="group flex items-center gap-4 hover:opacity-90 transition-opacity">
-            <div className="relative h-16 w-[280px] sm:w-[320px] lg:h-20 lg:w-[420px] flex-shrink-0 overflow-hidden">
+            <div className="relative h-10 w-[clamp(140px,48vw,320px)] sm:h-12 sm:w-[clamp(180px,40vw,360px)] flex-shrink-0 overflow-hidden">
               <Image
                 src="/icons/ittalab.png"
                 alt="Ittalab"
                 fill
                 priority
                 className="object-contain object-left"
-                sizes="(min-width: 1024px) 420px, (min-width: 640px) 320px, 280px"
+                sizes="(min-width: 640px) 360px, 320px"
               />
             </div>
           </Link>
@@ -71,19 +71,19 @@ export default function Navbar() {
 
       {/* Mobile Menu Overlay */}
       {mobileMenuOpen && (
-        <div className="fixed inset-0 z-50 bg-background/[0.98] flex flex-col items-center justify-center">
+        <div className="fixed inset-0 z-50 bg-background/[0.98] flex flex-col items-center justify-center px-4">
           <Link
             href="/"
-            className="absolute top-6 left-6 flex items-center gap-4"
+            className="absolute top-6 left-4 sm:left-6 flex items-center gap-4"
             onClick={() => setMobileMenuOpen(false)}
           >
-            <div className="relative h-16 w-[280px] sm:w-[320px] overflow-hidden">
+            <div className="relative h-10 w-[clamp(140px,48vw,280px)] overflow-hidden">
               <Image
                 src="/icons/ittalab.png"
                 alt="Ittalab"
                 fill
                 className="object-contain object-left"
-                sizes="(min-width: 640px) 320px, 280px"
+                sizes="280px"
               />
             </div>
           </Link>
@@ -101,14 +101,14 @@ export default function Navbar() {
           </button>
 
           {/* Mobile Nav Links */}
-          <nav className="flex flex-col items-center gap-8">
+          <nav className="flex flex-col items-center gap-6 sm:gap-8">
             {navLinks.map((link) => {
               const isActive = pathname === link.href;
               return (
                 <Link
                   key={link.href}
                   href={link.href}
-                  className={`text-3xl font-display tracking-tight transition-colors ${
+                  className={`text-2xl sm:text-3xl font-display tracking-tight transition-colors ${
                     isActive
                       ? "text-[#EA580C]"
                       : "text-[#F5F5DC]"

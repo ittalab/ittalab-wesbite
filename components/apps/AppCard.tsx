@@ -17,14 +17,14 @@ export default function AppCard({ app }: AppCardProps) {
     isLive
       ? "bg-[#181818] border border-[#2D2319]"
       : "bg-gradient-to-br from-[#181818] via-[#232526] to-[#EA580C]/20 border border-[#2D2319]",
-    "rounded-xl p-8 lg:p-9 w-full h-[320px] lg:h-[340px] flex flex-col gap-6 lg:gap-8 overflow-hidden transition-all duration-300",
+    "rounded-xl p-6 sm:p-7 lg:p-8 w-full min-h-[280px] sm:min-h-[300px] lg:min-h-[340px] flex flex-col gap-5 sm:gap-6 lg:gap-8 overflow-hidden transition-all duration-300",
     isLive && "hover:border-[#EA580C]/50 hover:translate-y-[-4px] hover:shadow-2xl",
     isComingSoon && "app-card--coming-soon opacity-80 cursor-not-allowed"
   );
 
   const cardBody = (
     <div className={cardClasses}>
-      <div className="shrink-0 mb-2 lg:mb-3">
+      <div className="shrink-0 mb-1 sm:mb-2 lg:mb-3">
         <AppIcon emoji={app.icon} logo={app.logo} size="sm" isComingSoon={isComingSoon} />
       </div>
 
@@ -35,7 +35,7 @@ export default function AppCard({ app }: AppCardProps) {
 
         <p
           className={cn(
-            "text-sm lg:text-base text-[#F5F5DC]/80 leading-relaxed",
+            "text-[15px] sm:text-base text-[#F5F5DC]/80 leading-relaxed",
             isComingSoon && "opacity-70"
           )}
           style={{
@@ -59,7 +59,7 @@ export default function AppCard({ app }: AppCardProps) {
           isLive ? "text-[#EA580C] group-hover:text-[#C2410C]" : "text-[#F5F5DC]/35"
         )}
       >
-        <span className="text-sm font-medium mr-2">
+        <span className="text-xs sm:text-sm font-medium mr-2">
           {isComingSoon ? "Coming Soon" : "Open app"}
         </span>
         <span className={cn("transform transition-transform", isLive && "group-hover:translate-x-1")}>→</span>

@@ -30,7 +30,7 @@ export default function HeroSection() {
   return (
     <section className="min-h-screen flex items-center py-20 lg:py-24">
       <div className="container mx-auto px-6 lg:px-16">
-        <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
+        <div className="grid lg:grid-cols-2 gap-8 md:gap-12 lg:gap-16 items-center">
 
           {/* ── LEFT: Text ── */}
           <div className="space-y-6">
@@ -106,7 +106,7 @@ export default function HeroSection() {
           </div>
 
           {/* ── RIGHT: Brick wall ── */}
-          <div className="flex justify-center items-center">
+          <div className="hidden md:flex justify-center items-center">
             <div
               style={{
                 position: "relative",

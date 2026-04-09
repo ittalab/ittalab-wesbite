@@ -16,7 +16,7 @@ export default function AppsPage() {
         <div className="space-y-4 max-w-2xl">
           <SectionLabel>{"APP PORTFOLIO"}</SectionLabel>
 
-          <h1 className="text-5xl lg:text-6xl font-display font-bold text-foreground">
+          <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-display font-bold text-foreground">
             Everything we&apos;ve built
           </h1>
 
@@ -25,7 +25,7 @@ export default function AppsPage() {
           </p>
         </div>
 
-        <div className="mt-16 lg:mt-20 grid md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8">
+        <div className="mt-10 sm:mt-12 grid md:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 lg:gap-8">
           {apps.map((app) => (
             <AppCard key={app.slug} app={app} />
           ))}
