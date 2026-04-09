@@ -28,7 +28,7 @@ const totalHeadlineDuration = words.length * 0.12 + 0.35; // last word delay + i
 
 export default function HeroSection() {
   return (
-    <section className="min-h-screen flex items-center py-20 lg:py-24">
+    <section className="min-h-[calc(100vh-4rem)] flex items-center pt-8 pb-16 sm:pt-10 sm:pb-20 lg:pt-12 lg:pb-24">
       <div className="container mx-auto px-6 lg:px-16">
         <div className="grid lg:grid-cols-2 gap-8 md:gap-12 lg:gap-16 items-center">
 
