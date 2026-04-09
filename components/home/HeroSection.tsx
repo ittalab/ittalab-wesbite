@@ -32,7 +32,7 @@ const totalHeadlineDuration = words.length * 0.12 + 0.35; // last word delay + i
 
 export default function HeroSection() {
   return (
-    <section className="min-h-fit lg:min-h-[calc(100vh-4rem)] flex items-start lg:items-center pt-12 pb-16 sm:pt-14 sm:pb-20 lg:pt-12 lg:pb-24">
+    <section className="min-h-fit lg:min-h-[calc(100vh-4rem)] flex items-start lg:items-center py-12 sm:py-16 lg:py-24">
       <div className="container mx-auto px-6 lg:px-16">
         <div className="grid lg:grid-cols-2 gap-8 md:gap-12 lg:gap-16 items-center">
 
@@ -92,17 +92,17 @@ export default function HeroSection() {
 
             {/* CTAs */}
             <div
-              className="flex flex-col sm:flex-row items-stretch sm:items-center gap-4 sm:gap-8 pt-2 w-full max-w-xs sm:max-w-none"
+              className="flex flex-col sm:flex-row items-start sm:items-center gap-3 sm:gap-8 pt-2 w-full max-w-[220px] sm:max-w-none"
               style={{
                 opacity: 0,
                 animation: "brickFadeIn 0.45s ease both",
                 animationDelay: `${totalHeadlineDuration + 0.2}s`,
               }}
             >
-              <CTAButton href="/apps" variant="primary" className="w-full sm:w-auto">
+              <CTAButton href="/apps" variant="primary" className="w-auto sm:w-auto">
                 See what we build
               </CTAButton>
-              <CTAButton href="/about" variant="secondary" className="w-full sm:w-auto">
+              <CTAButton href="/about" variant="secondary" className="w-auto sm:w-auto">
                 Our approach
               </CTAButton>
             </div>

@@ -43,7 +43,7 @@ export default async function AppPage({
   }
 
   return (
-    <main className="py-12 min-h-screen bg-background">
+    <main className="min-h-screen bg-background">
       <AppHero app={app} />
     </main>
   );

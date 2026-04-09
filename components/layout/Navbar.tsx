@@ -19,7 +19,7 @@ export default function Navbar() {
     <>
       {/* Desktop Navbar */}
       <header className="fixed top-0 left-0 right-0 z-40 h-16 w-full bg-[#1A1009] border-b border-[#2D2319]">
-        <div className="max-w-screen-xl mx-auto px-4 sm:px-6 lg:px-16 flex items-center justify-between h-full">
+        <div className="max-w-screen-xl mx-auto px-5 sm:px-8 lg:px-16 flex items-center justify-between h-full">
           {/* Logo */}
           <Link href="/" className="group flex items-center gap-4 hover:opacity-90 transition-opacity">
             <div className="relative h-10 w-[clamp(140px,48vw,320px)] sm:h-12 sm:w-[clamp(180px,40vw,360px)] flex-shrink-0 overflow-hidden">
@@ -79,7 +79,7 @@ export default function Navbar() {
           />
 
           <div className="fixed top-16 left-0 right-0 z-40 lg:hidden border-b border-[#2D2319] bg-[#1A1009] shadow-xl">
-            <nav className="max-w-screen-xl mx-auto px-4 sm:px-6 py-4 flex flex-col gap-2">
+            <nav className="max-w-screen-xl mx-auto px-5 sm:px-8 py-4 flex flex-col gap-2">
               {navLinks.map((link) => {
                 const isActive = pathname === link.href;
                 return (

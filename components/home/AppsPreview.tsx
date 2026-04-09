@@ -6,7 +6,7 @@ import AppCard from "@/components/apps/AppCard";
 
 export default function AppsPreview() {
   return (
-    <section className="pt-24 pb-20 lg:py-24">
+    <section className="py-12 sm:py-16 lg:py-24">
       <div className="container mx-auto px-6 lg:px-16">
         <div className="max-w-2xl space-y-6">
           <SectionLabel>{"WHAT WE BUILD"}</SectionLabel>

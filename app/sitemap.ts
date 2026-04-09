@@ -29,7 +29,7 @@ export default function sitemap() {
   ];
 
   const appRoutes = apps.map((app) => ({
-    url: `https://ittalab.com/apps/info/${app.slug}`,
+    url: `https://ittalab.com/apps/${app.slug}`,
     lastModified: new Date(),
     changeFrequency: "monthly" as const,
     priority: 0.8,

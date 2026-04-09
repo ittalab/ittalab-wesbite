@@ -20,8 +20,8 @@ export default function CTAButton({
 }: CTAButtonProps) {
 
   const baseStyles = [
-    "font-sans font-semibold text-base",
-    "px-6 min-w-[140px] h-12",
+    "font-sans font-semibold text-sm sm:text-base",
+    "px-4 sm:px-6 min-w-0 sm:min-w-[140px] h-11 sm:h-12",
     "rounded-xl",
     "transition-all duration-200",
     "inline-flex items-center justify-center gap-2",

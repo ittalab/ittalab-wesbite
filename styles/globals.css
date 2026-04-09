@@ -11,12 +11,16 @@
 
 html {
   -webkit-font-smoothing: antialiased;
+  overflow-x: hidden;
+  max-width: 100%;
 }
 
 body {
   background: #181818;
   color: #F5F5DC;
   font-family: var(--font-sans);
+  overflow-x: hidden;
+  max-width: 100%;
 }
 
 ::selection {
