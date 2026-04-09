@@ -5,6 +5,10 @@ import CTAButton from "@/components/ui/CTAButton";
 
 const ROWS = 6;
 const COLS = 10;
+const BRICK_WIDTH = 34;
+const BRICK_HEIGHT = 16;
+const BRICK_GAP = 3;
+const ROW_OFFSET = 18;
 
 // Bricklaying order: bottom row first, left to right, then next row up
 // Each brick drops in from above its final position
@@ -28,12 +32,12 @@ const totalHeadlineDuration = words.length * 0.12 + 0.35; // last word delay + i
 
 export default function HeroSection() {
   return (
-    <section className="min-h-[calc(100vh-4rem)] flex items-center pt-8 pb-16 sm:pt-10 sm:pb-20 lg:pt-12 lg:pb-24">
+    <section className="min-h-fit lg:min-h-[calc(100vh-4rem)] flex items-start lg:items-center pt-12 pb-16 sm:pt-14 sm:pb-20 lg:pt-12 lg:pb-24">
       <div className="container mx-auto px-6 lg:px-16">
         <div className="grid lg:grid-cols-2 gap-8 md:gap-12 lg:gap-16 items-center">
 
           {/* ── LEFT: Text ── */}
-          <div className="space-y-6">
+          <div className="space-y-7 sm:space-y-8">
             <p
               className="text-xs font-sans font-medium tracking-widest uppercase"
               style={{
@@ -49,9 +53,8 @@ export default function HeroSection() {
             {/* Brick-drop headline */}
             <h1
               aria-label={headline}
-              className="font-display font-bold leading-[0.95] tracking-tight"
+              className="font-display font-bold leading-[1.02] tracking-tight text-4xl sm:text-6xl lg:text-[80px]"
               style={{
-                fontSize: "clamp(40px, 7vw, 80px)",
                 color: "#F5F5DC",
                 display: "block",
               }}
@@ -75,7 +78,7 @@ export default function HeroSection() {
 
             {/* Subtext — fades in after last word lands */}
             <p
-              className="font-sans leading-relaxed max-w-xl"
+              className="font-sans leading-relaxed max-w-md sm:max-w-xl"
               style={{
                 fontSize: "clamp(16px, 2vw, 20px)",
                 color: "#A89880",
@@ -89,37 +92,38 @@ export default function HeroSection() {
 
             {/* CTAs */}
             <div
-              className="flex flex-wrap gap-4 pt-4"
+              className="flex flex-col sm:flex-row items-stretch sm:items-center gap-4 sm:gap-8 pt-2 w-full max-w-xs sm:max-w-none"
               style={{
                 opacity: 0,
                 animation: "brickFadeIn 0.45s ease both",
                 animationDelay: `${totalHeadlineDuration + 0.2}s`,
               }}
             >
-              <CTAButton href="/apps" variant="primary">
+              <CTAButton href="/apps" variant="primary" className="w-full sm:w-auto">
                 See what we build
               </CTAButton>
-              <CTAButton href="/about" variant="secondary">
+              <CTAButton href="/about" variant="secondary" className="w-full sm:w-auto">
                 Our approach
               </CTAButton>
             </div>
           </div>
 
           {/* ── RIGHT: Brick wall ── */}
-          <div className="hidden md:flex justify-center items-center">
+          <div className="w-full flex justify-center items-center overflow-hidden mt-4 sm:mt-5 lg:mt-0">
             <div
+              className="mx-auto origin-center scale-[0.8] sm:scale-[0.9] md:scale-[1.05] lg:scale-[1.18]"
               style={{
                 position: "relative",
-                // Each brick: 44px wide, 22px tall, 3px gap
-                width: `${COLS * 47 + 23}px`, // +23 for odd-row offset
-                height: `${ROWS * 25}px`,
+                // Mobile-first brick geometry, then scaled up by breakpoints.
+                width: `${COLS * (BRICK_WIDTH + BRICK_GAP) + ROW_OFFSET}px`,
+                height: `${ROWS * (BRICK_HEIGHT + BRICK_GAP)}px`,
               }}
             >
               {Array.from({ length: ROWS }).map((_, rowIndex) =>
                 Array.from({ length: COLS }).map((_, colIndex) => {
                   const isOddRow = rowIndex % 2 === 1;
-                  const left = colIndex * 47 + (isOddRow ? 23 : 0);
-                  const top = rowIndex * 25;
+                  const left = colIndex * (BRICK_WIDTH + BRICK_GAP) + (isOddRow ? ROW_OFFSET : 0);
+                  const top = rowIndex * (BRICK_HEIGHT + BRICK_GAP);
                   const delay = getBrickDelay(rowIndex, colIndex);
                   const color = getBrickColor(rowIndex, colIndex);
 
@@ -131,8 +135,8 @@ export default function HeroSection() {
                           position: "absolute",
                           left,
                           top,
-                          width: "44px",
-                          height: "22px",
+                          width: `${BRICK_WIDTH}px`,
+                          height: `${BRICK_HEIGHT}px`,
                           borderRadius: "2px",
                           backgroundColor: color,
                           // Mortar gap effect via box-shadow inset
