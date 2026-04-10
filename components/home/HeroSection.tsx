@@ -106,12 +106,12 @@ export default function HeroSection() {
                 style={{
                   display: "inline-flex",
                   backgroundColor: "#181818",
-                  color: "#ffffff",
-                  fontSize: "12px",
+                  color: "#F5F5DC",
+                  fontSize: "13px",
                   fontWeight: 500,
                   lineHeight: 1,
-                  padding: "10px 16px",
-                  borderRadius: "8px",
+                  padding: "12px 20px",
+                  borderRadius: "10px",
                   border: "1px solid #3a3a3a",
                   opacity: 1,
                   textDecoration: "none",
@@ -128,20 +128,20 @@ export default function HeroSection() {
                 style={{
                   display: "inline-flex",
                   backgroundColor: "#181818",
-                  fontSize: "12px",
+                  fontSize: "13px",
                   fontWeight: 400,
                   lineHeight: 1,
-                  padding: "10px 16px",
-                  borderRadius: "8px",
+                  padding: "12px 20px",
+                  borderRadius: "10px",
                   border: "1px solid #3a3a3a",
                   opacity: 1,
                   textDecoration: "none",
-                  color: "#ffffff",
+                  color: "#F5F5DC",
                   fontFamily: "inherit",
                   boxSizing: "border-box",
                 }}
               >
-                <span style={{ color: "#ffffff" }}>How we build</span>
+                <span style={{ color: "#F5F5DC" }}>How we build</span>
                 <span style={{ color: "#e85d04", marginLeft: "4px" }}>→</span>
               </Link>
             </div>
