@@ -29,6 +29,7 @@ export const apps: App[] = [
       "Hot Takes arena to post opinions, vote, and debate",
       "The Gaffer — your AI prediction coach (coming soon)",
     ],
+    websiteUrl: "/apps/fanpitch",
   },
   {
     slug: "cardgame",
@@ -43,6 +44,7 @@ export const apps: App[] = [
       "Use creative tactics to win hands and score points",
       "More rules will be added soon",
     ],
+    websiteUrl: "/apps/cardgame",
   },
   {
     slug: "salesTracker",
@@ -58,5 +60,6 @@ export const apps: App[] = [
       "Generate visual reports and trends",
       "Add credit sales and returns",
     ],
+    websiteUrl: "/apps/salestracker",
   },
 ];
