@@ -1,7 +1,7 @@
 "use client";
 
 import type { CSSProperties } from "react";
-import CTAButton from "@/components/ui/CTAButton";
+import Link from "next/link";
 
 const ROWS = 6;
 const COLS = 10;
@@ -92,19 +92,58 @@ export default function HeroSection() {
 
             {/* CTAs */}
             <div
-              className="flex flex-col sm:flex-row items-start sm:items-center gap-3 sm:gap-8 pt-2 w-full max-w-[220px] sm:max-w-none"
+              className="flex flex-row items-center justify-start gap-[12px] pt-2 w-fit"
               style={{
-                opacity: 0,
-                animation: "brickFadeIn 0.45s ease both",
-                animationDelay: `${totalHeadlineDuration + 0.2}s`,
+                opacity: 1,
+                filter: "none",
+                backdropFilter: "none",
+                backgroundColor: "transparent",
               }}
             >
-              <CTAButton href="/apps" variant="primary" className="w-auto sm:w-auto">
-                See what we build
-              </CTAButton>
-              <CTAButton href="/about" variant="secondary" className="w-auto sm:w-auto">
-                Our approach
-              </CTAButton>
+              <Link
+                href="/apps"
+                className="inline-flex items-center justify-center whitespace-nowrap"
+                style={{
+                  display: "inline-flex",
+                  backgroundColor: "#181818",
+                  color: "#ffffff",
+                  fontSize: "12px",
+                  fontWeight: 500,
+                  lineHeight: 1,
+                  padding: "10px 16px",
+                  borderRadius: "8px",
+                  border: "1px solid #3a3a3a",
+                  opacity: 1,
+                  textDecoration: "none",
+                  fontFamily: "inherit",
+                  boxSizing: "border-box",
+                }}
+              >
+                See our work
+              </Link>
+
+              <Link
+                href="/about"
+                className="inline-flex items-center justify-center whitespace-nowrap"
+                style={{
+                  display: "inline-flex",
+                  backgroundColor: "#181818",
+                  fontSize: "12px",
+                  fontWeight: 400,
+                  lineHeight: 1,
+                  padding: "10px 16px",
+                  borderRadius: "8px",
+                  border: "1px solid #3a3a3a",
+                  opacity: 1,
+                  textDecoration: "none",
+                  color: "#ffffff",
+                  fontFamily: "inherit",
+                  boxSizing: "border-box",
+                }}
+              >
+                <span style={{ color: "#ffffff" }}>How we build</span>
+                <span style={{ color: "#e85d04", marginLeft: "4px" }}>→</span>
+              </Link>
             </div>
           </div>
 
