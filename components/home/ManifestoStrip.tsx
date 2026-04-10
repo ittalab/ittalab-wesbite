@@ -10,9 +10,18 @@ export default function ManifestoStrip() {
           <h2 className="text-4xl lg:text-5xl font-display font-bold text-foreground leading-tight max-w-xl">
             Independence means no compromise
           </h2>
-          <p className="text-lg text-foreground/80 leading-relaxed max-w-2xl">
-            We aren&apos;t funded. We don&apos;t have investors to please or growth targets to hit. That means every app is built the way it should be — focused, useful, and respectful of your time.
-          </p>
+          <div className="max-w-2xl space-y-4 text-lg text-foreground/80 leading-relaxed">
+            <p>
+              We aren&apos;t funded. We don&apos;t have investors to please or growth targets to
+              hit. That means every app is built the way it should be: focused, useful,
+              and respectful of your time.
+            </p>
+            <p>
+              Because we build independently, we&apos;re free to explore ideas without
+              constraints. That includes useful tools, playful games, and apps made for
+              friendly competition.
+            </p>
+          </div>
         </div>
       </div>
     </section>

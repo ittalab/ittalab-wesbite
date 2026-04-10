@@ -17,24 +17,24 @@ export default function AboutPage() {
           </p>
 
           <h1 className="max-w-2xl text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-display font-bold text-foreground">
-            Built by one person. No investors. No bullshit.
+            Focused apps, built with intent
           </h1>
 
           <div className="max-w-2xl space-y-6 text-lg text-foreground/90 leading-relaxed">
             <p className="mx-auto">
-              Ittalab is one person building apps that solve specific problems. No team. No funding. No pitch deck. Just work.
+              Ittalab builds focused apps that are simple, useful, and designed with intent. There&apos;s no funding or external direction-just direct execution from idea to release.
             </p>
 
             <p className="mx-auto">
-              Every app here exists because someone needed it — including me. If it doesn&apos;t solve a real problem, it doesn&apos;t get built. If it needs ten features to be useful, it doesn&apos;t get built.
+              Every app exists for a clear reason. It either solves a real need or creates a better way to play, explore, or connect. If it doesn&apos;t feel necessary or enjoyable, it doesn&apos;t get built.
             </p>
 
             <p className="mx-auto">
-              There&apos;s no roadmap. No backlog of &apos;nice-to-haves.&apos; When an idea is worth building, it gets built. When it&apos;s done, it ships. Everything else is noise.
+              Ideas aren&apos;t stored in long roadmaps or backlogs. They&apos;re explored when they make sense and shipped when they&apos;re ready. The focus is on building, refining, and releasing-not overplanning.
             </p>
 
             <p className="mx-auto">
-              Apps are like bricks — each one serves a purpose, placed deliberately. Stack them right and you build something that lasts. Rush it or add too many, and the whole thing falls apart.
+              Each app stands on its own as a small, intentional experience. Over time, they form a growing collection of useful and enjoyable products.
             </p>
           </div>
         </div>

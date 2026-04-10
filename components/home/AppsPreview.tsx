@@ -16,7 +16,7 @@ export default function AppsPreview() {
           </h2>
 
           <p className="text-lg text-muted max-w-xl">
-            Each app has a clear purpose. No feature creep. No bloat.
+            Most apps overcomplicate simple problems.These don’t.
           </p>
         </div>
 
