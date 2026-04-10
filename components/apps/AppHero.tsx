@@ -28,7 +28,7 @@ export default function AppHero({ app }: AppHeroProps) {
             {/* Icon + Tag row */}
             <div className="flex items-center gap-3">
               <AppIcon emoji={app.icon} logo={app.logo} size="lg" isComingSoon={isComingSoon} />
-              <Tag variant={app.status}>{isComingSoon ? "Coming Soon" : app.status}</Tag>
+              <Tag variant={app.status}>{isComingSoon ? "Coming Soon" : "LIVE"}</Tag>
             </div>
 
             {/* Text block */}

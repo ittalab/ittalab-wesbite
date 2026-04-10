@@ -47,6 +47,21 @@ export default function AppCard({ app }: AppCardProps) {
         >
           {app.tagline}
         </p>
+
+        <p
+          className={cn(
+            "text-sm sm:text-[15px] text-[#F5F5DC]/70 leading-relaxed",
+            isComingSoon && "opacity-70"
+          )}
+          style={{
+            display: "-webkit-box",
+            WebkitBoxOrient: "vertical",
+            WebkitLineClamp: 4,
+            overflow: "hidden",
+          }}
+        >
+          {app.description}
+        </p>
       </div>
 
       <div className="min-h-[32px] pt-1">

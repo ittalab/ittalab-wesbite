@@ -18,7 +18,7 @@ export const apps: App[] = [
     name: "FanPitch",
     tagline: "PREDICT. WIN. BRAG.",
     description:
-      "FanPitch is a football prediction app where you compete with friends in private leagues. Call the score, earn points, and see who really knows the game.",
+      "FanPitch is a football fan engagement mobile app. It combines score predictions with a competitive leaderboard and a social hot-takes debate feed. The app that is made by someone who genuinely loves football - not assembled from UI templates.",
     status: "live",
     icon: "⚽",
     logo: "/icons/fanpitch_logo.png",

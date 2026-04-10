@@ -16,7 +16,7 @@ export default function AppsPreview() {
           </h2>
 
           <p className="text-lg text-muted max-w-xl">
-            Most apps overcomplicate simple problems.These don’t.
+            Most apps overcomplicate simple problems. These don’t.
           </p>
         </div>
 

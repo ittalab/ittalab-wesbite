@@ -87,7 +87,7 @@ export default function HeroSection() {
                 animationDelay: `${totalHeadlineDuration + 0.05}s`,
               }}
             >
-              Ittalab builds mobile apps with clear scope and zero compromise on quality.
+              Most apps start with a simple thought: “I wish this existed.” Ittalab turns that into something real, builds it quickly, and ships it to the App Store.
             </p>
 
             {/* CTAs */}
@@ -148,7 +148,7 @@ export default function HeroSection() {
           </div>
 
           {/* ── RIGHT: Brick wall ── */}
-          <div className="w-full flex justify-center items-center overflow-hidden mt-4 sm:mt-5 lg:mt-0">
+          <div className="w-full flex justify-center items-center overflow-hidden lg:overflow-visible mt-4 sm:mt-5 lg:mt-0">
             <div
               className="mx-auto origin-center scale-[0.8] sm:scale-[0.9] md:scale-[1.05] lg:scale-[1.18]"
               style={{
