@@ -66,8 +66,8 @@ export default function Footer() {
 
         <div className="border-t border-[#2D2319] pt-8 mt-8">
           <p className="text-xs text-[#9C8A7A]">
-  © {new Date().getFullYear()} Ittalab. All rights reserved.
-</p>
+            © {new Date().getFullYear()} Ittalab. All rights reserved.
+          </p>
         </div>
       </div>
     </footer>

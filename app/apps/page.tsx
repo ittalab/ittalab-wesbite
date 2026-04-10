@@ -21,7 +21,7 @@ export default function AppsPage() {
           </h1>
 
           <p className="text-lg text-muted">
-            Some are live. Some are coming soon. All solve real problems.
+            Some are live. Some are coming soon. All are designed as simple, engaging experiences.
           </p>
         </div>
 

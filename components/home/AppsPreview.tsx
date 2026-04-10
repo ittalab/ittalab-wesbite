@@ -12,7 +12,7 @@ export default function AppsPreview() {
           <SectionLabel>{"WHAT WE BUILD"}</SectionLabel>
 
           <h2 className="text-4xl lg:text-5xl font-display font-bold text-foreground leading-tight">
-            Apps that solve one thing well
+            Apps built with intent
           </h2>
 
           <p className="text-lg text-muted max-w-xl">
