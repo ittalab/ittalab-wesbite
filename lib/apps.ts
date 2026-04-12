@@ -29,7 +29,7 @@ export const apps: App[] = [
       "Hot Takes arena to post opinions, vote, and debate",
       "The Gaffer — your AI prediction coach (coming soon)",
     ],
-    websiteUrl: "/apps/fanpitch",
+    websiteUrl: "https://fanpitch.ittalab.com",
   },
   {
     slug: "cardgame",
