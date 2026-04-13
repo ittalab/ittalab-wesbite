@@ -12,6 +12,7 @@ export default {
             background: "#181818",        // Dark black background
         surface: "#231A15",           // Slightly lighter brown (elevated elements)
         foreground: "#1C1410",         // Dark text (not pure black)
+        cream: "#F5F5DC",              // Light cream text used across the site
         muted: "#9C8A7A",             // Muted tan (secondary text)
         border: "#2D2319",            // Subtle brown border
         primary: {
