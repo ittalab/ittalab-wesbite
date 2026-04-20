@@ -47,12 +47,12 @@ export const apps: App[] = [
     websiteUrl: "/apps/cardgame",
   },
   {
-    slug: "salesTracker",
-    name: "SalesTracker",
+    slug: "salesTrack",
+    name: "SalesTrack",
     tagline: "Track your sales performance with ease",
     description:
       "A simple tool to track your sales performance, visualize trends, and identify opportunities for growth. Connect your data and get insights at a glance.",
-    status: "in-development",
+    status: "live",
     icon: "📊",
     features: [
       "Enter your inventory items",
@@ -60,6 +60,6 @@ export const apps: App[] = [
       "Generate visual reports and trends",
       "Add credit sales and returns",
     ],
-    websiteUrl: "/apps/salestracker",
+    websiteUrl: "https://salesTrack.ittalab.com",
   },
 ];
