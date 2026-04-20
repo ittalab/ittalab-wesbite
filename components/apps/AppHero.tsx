@@ -14,8 +14,47 @@ export default function AppHero({ app }: AppHeroProps) {
   const isComingSoon = app.status === "in-development";
   const isFanPitch = app.slug === "fanpitch";
   const features = app.features.slice(0, 6);
-  const hasAppStoreLink = Boolean(app.appStoreUrl);
-  const hasPlayStoreLink = Boolean(app.playStoreUrl);
+
+  const renderStoreBadge = ({
+    href,
+    status,
+    iconSrc,
+    alt,
+    ariaLabel,
+  }: {
+    href: string;
+    status: App["appStoreStatus"];
+    iconSrc: string;
+    alt: string;
+    ariaLabel: string;
+  }) => {
+    if (status === "live") {
+      return (
+        <a
+          href={href}
+          target="_blank"
+          rel="noopener noreferrer"
+          aria-label={ariaLabel}
+          className="flex-shrink-0 rounded-xl transition-opacity duration-150 hover:opacity-80 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary"
+        >
+          {/* eslint-disable-next-line @next/next/no-img-element */}
+          <img src={iconSrc} alt={alt} style={{ height: 48, width: "auto", display: "block" }} />
+        </a>
+      );
+    }
+
+    return (
+      <div className="flex min-w-0 flex-col gap-2" aria-disabled="true">
+        <div className="flex-shrink-0 rounded-xl border border-[#2D2319] bg-[#231A15]/70 p-1 opacity-55">
+          {/* eslint-disable-next-line @next/next/no-img-element */}
+          <img src={iconSrc} alt={alt} style={{ height: 48, width: "auto", display: "block" }} />
+        </div>
+        <span className="max-w-[220px] text-xs leading-5 text-foreground-muted">
+          Currently not available. Check soon.
+        </span>
+      </div>
+    );
+  };
 
   return (
     <section className="w-full border-b border-border bg-background py-16 sm:py-20 lg:py-28">
@@ -40,43 +79,22 @@ export default function AppHero({ app }: AppHeroProps) {
             </div>
 
             <div className="flex flex-col gap-3">
-              {hasAppStoreLink || hasPlayStoreLink ? (
-                <div className="flex flex-row gap-3">
-                  {hasAppStoreLink ? (
-                    <a
-                      href={app.appStoreUrl}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      aria-label="Download on the App Store"
-                      className="flex-shrink-0 rounded-xl transition-opacity duration-150 hover:opacity-80 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary"
-                    >
-                      {/* eslint-disable-next-line @next/next/no-img-element */}
-                      <img
-                        src="/icons/appstore.svg"
-                        alt="Download on the App Store"
-                        style={{ height: 48, width: "auto", display: "block" }}
-                      />
-                    </a>
-                  ) : null}
-
-                  {hasPlayStoreLink ? (
-                    <a
-                      href={app.playStoreUrl}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      aria-label="Get it on Google Play"
-                      className="flex-shrink-0 rounded-xl transition-opacity duration-150 hover:opacity-80 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary"
-                    >
-                      {/* eslint-disable-next-line @next/next/no-img-element */}
-                      <img
-                        src="/icons/playstore.svg"
-                        alt="Get it on Google Play"
-                        style={{ height: 48, width: "auto", display: "block" }}
-                      />
-                    </a>
-                  ) : null}
-                </div>
-              ) : null}
+              <div className="flex flex-wrap items-start gap-3">
+                {renderStoreBadge({
+                  href: app.appStoreUrl,
+                  status: app.appStoreStatus,
+                  iconSrc: "/icons/appstore.svg",
+                  alt: "Download on the App Store",
+                  ariaLabel: "Download on the App Store",
+                })}
+                {renderStoreBadge({
+                  href: app.playStoreUrl,
+                  status: app.playStoreStatus,
+                  iconSrc: "/icons/playstore.svg",
+                  alt: "Get it on Google Play",
+                  ariaLabel: "Get it on Google Play",
+                })}
+              </div>
 
               <CTAButton
                 href={app.websiteUrl || "https://ittalab.com/coming-soon"}

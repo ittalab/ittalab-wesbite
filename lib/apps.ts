@@ -7,10 +7,18 @@ export interface App {
   icon: string;
   logo?: string;
   features: string[];
-  appStoreUrl?: string;
-  playStoreUrl?: string;
+  appStoreUrl: string;
+  appStoreStatus: "in-development" | "live";
+  playStoreUrl: string;
+  playStoreStatus: "in-development" | "live";
   websiteUrl?: string;
 }
+
+const createAppStoreUrl = (slug: string) =>
+  `https://apps.apple.com/us/app/${slug.toLowerCase()}/id0000000000`;
+
+const createPlayStoreUrl = (slug: string) =>
+  `https://play.google.com/store/apps/details?id=com.ittalab.${slug.toLowerCase()}`;
 
 export const apps: App[] = [
   {
@@ -29,6 +37,10 @@ export const apps: App[] = [
       "Hot Takes arena to post opinions, vote, and debate",
       "The Gaffer — your AI prediction coach (coming soon)",
     ],
+    appStoreUrl: createAppStoreUrl("fanpitch"),
+    appStoreStatus: "live",
+    playStoreUrl: createPlayStoreUrl("fanpitch"),
+    playStoreStatus: "live",
     websiteUrl: "https://fanpitch.ittalab.com",
   },
   {
@@ -44,6 +56,10 @@ export const apps: App[] = [
       "Use creative tactics to win hands and score points",
       "More rules will be added soon",
     ],
+    appStoreUrl: createAppStoreUrl("cardgame"),
+    appStoreStatus: "in-development",
+    playStoreUrl: createPlayStoreUrl("cardgame"),
+    playStoreStatus: "in-development",
     websiteUrl: "/apps/cardgame",
   },
   {
@@ -60,6 +76,10 @@ export const apps: App[] = [
       "Generate visual reports and trends",
       "Add credit sales and returns",
     ],
+    appStoreUrl: createAppStoreUrl("salesTrack"),
+    appStoreStatus: "in-development",
+    playStoreUrl: createPlayStoreUrl("salesTrack"),
+    playStoreStatus: "in-development",
     websiteUrl: "https://salesTrack.ittalab.com",
   },
 ];
