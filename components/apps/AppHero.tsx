@@ -1,4 +1,6 @@
-import React from "react";
+"use client";
+
+import React, { useEffect, useState } from "react";
 import Link from "next/link";
 import type { App } from "@/lib/apps";
 import { cn } from "@/lib/utils";
@@ -14,6 +16,23 @@ export default function AppHero({ app }: AppHeroProps) {
   const isComingSoon = app.status === "in-development";
   const isFanPitch = app.slug === "fanpitch";
   const features = app.features.slice(0, 6);
+  const [storeNotice, setStoreNotice] = useState<string | null>(null);
+
+  useEffect(() => {
+    if (!storeNotice) {
+      return;
+    }
+
+    const timeoutId = window.setTimeout(() => {
+      setStoreNotice(null);
+    }, 5000);
+
+    return () => window.clearTimeout(timeoutId);
+  }, [storeNotice]);
+
+  const handleUnavailableStoreClick = () => {
+    setStoreNotice("Currently not available. Check out soon.");
+  };
 
   const renderStoreBadge = ({
     href,
@@ -44,15 +63,16 @@ export default function AppHero({ app }: AppHeroProps) {
     }
 
     return (
-      <div className="flex min-w-0 flex-col gap-2" aria-disabled="true">
+      <button
+        type="button"
+        onClick={handleUnavailableStoreClick}
+        className="flex min-w-0 flex-col gap-2 text-left transition-opacity duration-150 hover:opacity-80 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary"
+      >
         <div className="flex-shrink-0 rounded-xl border border-[#2D2319] bg-[#231A15]/70 p-1 opacity-55">
           {/* eslint-disable-next-line @next/next/no-img-element */}
           <img src={iconSrc} alt={alt} style={{ height: 48, width: "auto", display: "block" }} />
         </div>
-        <span className="max-w-[220px] text-xs leading-5 text-foreground-muted">
-          Currently not available. Check soon.
-        </span>
-      </div>
+      </button>
     );
   };
 
@@ -95,6 +115,12 @@ export default function AppHero({ app }: AppHeroProps) {
                   ariaLabel: "Get it on Google Play",
                 })}
               </div>
+
+              {storeNotice ? (
+                <p className="max-w-[320px] text-xs leading-5 text-foreground-muted" aria-live="polite" role="status">
+                  {storeNotice}
+                </p>
+              ) : null}
 
               <CTAButton
                 href={app.websiteUrl || "https://ittalab.com/coming-soon"}
