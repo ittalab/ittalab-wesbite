@@ -20,9 +20,9 @@ export default function AppsPreview() {
           </p>
         </div>
 
-        <div className="mt-12 sm:mt-14 grid md:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 lg:gap-7">
+        <div className="mt-12 sm:mt-14 grid items-stretch md:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 lg:gap-7">
           {apps.map((app) => (
-            <div className="h-full flex" key={app.slug}>
+            <div className="flex h-full items-stretch" key={app.slug}>
               <AppCard app={app} />
             </div>
           ))}

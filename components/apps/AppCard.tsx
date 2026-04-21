@@ -17,7 +17,7 @@ export default function AppCard({ app }: AppCardProps) {
     isLive
       ? "bg-[#181818] border border-[#2D2319]"
       : "bg-gradient-to-br from-[#181818] via-[#232526] to-[#EA580C]/20 border border-[#2D2319]",
-    "rounded-xl p-6 sm:p-7 lg:p-8 w-full min-h-[280px] sm:min-h-[300px] lg:min-h-[340px] flex flex-col gap-5 sm:gap-6 lg:gap-8 overflow-hidden transition-all duration-300",
+    "rounded-xl p-6 sm:p-7 lg:p-8 w-full h-full min-h-[280px] sm:min-h-[300px] lg:min-h-[340px] flex flex-col gap-5 sm:gap-6 lg:gap-8 overflow-hidden transition-all duration-300",
     isLive && "hover:border-[#EA580C]/50 hover:translate-y-[-4px] hover:shadow-2xl",
     isComingSoon && "app-card--coming-soon opacity-80 cursor-not-allowed"
   );

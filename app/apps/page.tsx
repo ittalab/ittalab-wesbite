@@ -1,5 +1,6 @@
 import React from "react";
 import type { Metadata } from "next";
+import Link from "next/link";
 import { apps } from "@/lib/apps";
 import AppCard from "@/components/apps/AppCard";
 import SectionLabel from "@/components/ui/SectionLabel";
@@ -25,7 +26,7 @@ export default function AppsPage() {
           </p>
         </div>
 
-        <div className="mt-10 sm:mt-12 grid md:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 lg:gap-8">
+        <div className="mt-10 sm:mt-12 grid items-stretch md:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 lg:gap-8">
           {apps.map((app) => (
             <AppCard key={app.slug} app={app} />
           ))}
@@ -33,13 +34,13 @@ export default function AppsPage() {
 
         {apps.length > 3 && (
           <div className="mt-12 text-center">
-            <a
+            <Link
               href="/apps"
               className="text-primary hover:text-primary-hover transition-colors inline-flex items-center gap-2"
             >
               <span className="font-medium">View all apps</span>
               <span>→</span>
-            </a>
+            </Link>
           </div>
         )}
       </div>
