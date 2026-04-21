@@ -44,25 +44,6 @@ export const apps: App[] = [
     websiteUrl: "https://fanpitch.ittalab.com",
   },
   {
-    slug: "cardgame",
-    name: "CardGame",
-    tagline: "Traditional card game with fun rules",
-    description:
-      "Fun traditional card game to play with friends. Easy to learn, quick rounds, and a great way to pass the time. Perfect for game night or a casual hangout.",
-    status: "in-development",
-    icon: "🃏",
-    features: [
-      "2v2 team-based gameplay",
-      "Use creative tactics to win hands and score points",
-      "More rules will be added soon",
-    ],
-    appStoreUrl: createAppStoreUrl("cardgame"),
-    appStoreStatus: "in-development",
-    playStoreUrl: createPlayStoreUrl("cardgame"),
-    playStoreStatus: "in-development",
-    websiteUrl: "/apps/cardgame",
-  },
-  {
     slug: "salesTrack",
     name: "SalesTrack",
     tagline: "Track your sales performance with ease",
@@ -81,5 +62,24 @@ export const apps: App[] = [
     playStoreUrl: createPlayStoreUrl("salesTrack"),
     playStoreStatus: "in-development",
     websiteUrl: "https://salesTrack.ittalab.com",
+  },
+  {
+    slug: "cardgame",
+    name: "CardGame",
+    tagline: "Traditional card game with fun rules",
+    description:
+      "Fun traditional card game to play with friends. Easy to learn, quick rounds, and a great way to pass the time. Perfect for game night or a casual hangout.",
+    status: "in-development",
+    icon: "🃏",
+    features: [
+      "2v2 team-based gameplay",
+      "Use creative tactics to win hands and score points",
+      "More rules will be added soon",
+    ],
+    appStoreUrl: createAppStoreUrl("cardgame"),
+    appStoreStatus: "in-development",
+    playStoreUrl: createPlayStoreUrl("cardgame"),
+    playStoreStatus: "in-development",
+    websiteUrl: "/apps/cardgame",
   },
 ];
