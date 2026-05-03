@@ -3,51 +3,15 @@ import type { Metadata } from "next";
 import { LegalList, LegalPage, LegalSection } from "@/components/apps/legal";
 
 const dataCollectionRows = [
-  {
-    data: "Email address",
-    reason: "Account creation and login",
-    required: "Yes",
-  },
-  {
-    data: "Username and display name",
-    reason: "Identifying you to other players in leagues",
-    required: "Yes",
-  },
-  {
-    data: "Profile picture",
-    reason: "Displayed on your profile and in leaderboards",
-    required: "Optional",
-  },
-  {
-    data: "Favourite football club",
-    reason: "Personalising your profile and app experience",
-    required: "Optional",
-  },
-  {
-    data: "Bio",
-    reason: "Shown on public profile",
-    required: "Optional",
-  },
-  {
-    data: "Match predictions",
-    reason: "Core feature - calculating points and league rankings",
-    required: "Yes",
-  },
-  {
-    data: "Hot takes and comments",
-    reason: "Social feed features",
-    required: "Optional",
-  },
-  {
-    data: "Push notification token",
-    reason: "Sending match reminders and result notifications",
-    required: "Optional",
-  },
-  {
-    data: "Notification preferences",
-    reason: "Respecting your notification settings",
-    required: "Optional",
-  },
+  { data: "Email address", reason: "Account creation and login", required: "Yes" },
+  { data: "Username and display name", reason: "Identifying you to other players in leagues", required: "Yes" },
+  { data: "Profile picture", reason: "Displayed on your profile and in leaderboards", required: "Optional" },
+  { data: "Favourite football club", reason: "Personalising your profile and app experience", required: "Optional" },
+  { data: "Bio", reason: "Shown on public profile", required: "Optional" },
+  { data: "Match predictions", reason: "Core feature - calculating points and league rankings", required: "Yes" },
+  { data: "Hot takes and comments", reason: "Social feed features", required: "Optional" },
+  { data: "Push notification token", reason: "Sending match reminders and result notifications", required: "Optional" },
+  { data: "Notification preferences", reason: "Respecting your notification settings", required: "Optional" },
 ] as const;
 
 export const metadata: Metadata = {
@@ -178,7 +142,10 @@ export default function PrivacyPolicy() {
         </p>
       </LegalSection>
 
-      <LegalSection title="7. Your Rights and Account Deletion">
+      <LegalSection
+        title="7. Your Rights and Account Deletion"
+        id="your-rights-and-account-deletion"
+      >
         <LegalList>
           <li>Access the personal data we hold about you.</li>
           <li>Correct inaccurate data.</li>

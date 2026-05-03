@@ -19,6 +19,7 @@ type LegalSectionProps = {
   title: string;
   children: ReactNode;
   className?: string;
+  id?: string;
 };
 
 export function LegalPage({
@@ -86,9 +87,10 @@ export function LegalPage({
   );
 }
 
-export function LegalSection({ title, children, className }: LegalSectionProps) {
+export function LegalSection({ title, children, className, id }: LegalSectionProps) {
   return (
     <section
+      id={id}
       className={cn(
         "space-y-8 pt-10 sm:pt-12 lg:grid lg:grid-cols-[240px_minmax(0,1fr)] lg:gap-16 lg:space-y-0 lg:pt-14",
         className
